@@ -1,0 +1,138 @@
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Jeux">
+	<meta name="keywords" content="Trading" />
+	<meta name="author" content="Team Libra">
+	<meta name=" robots" content=" index,follow">
+
+	<title> Game Jam </title>
+
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="responsive.css">
+
+	<link rel="icon" href="../css/img/favicon.ico">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+
+
+<body id="retour_fond">
+
+
+	<section class="caracter_selection">
+
+		<article class="selected" onclick="click_square(0)"> <img src="assets/flags/flags/canada-flag.svg"> </article>
+		<article class="selected" onclick="click_square(1)">
+			<img src="assets/flags/flags/france-flag.svg"> </article>
+		<article class="selected" onclick="click_square(2)">
+			<img src="assets/flags/flags/japan-flag.svg"> </article>
+		<article class="selected" onclick="click_square(3)">
+			<img src="assets/flags/flags/swiss-flag.svg"> </article>
+		<article class="selected" onclick="click_square(4)">
+			<img src="assets/flags/flags/uk-flag.svg"></article>
+		<article class="selected" onclick="click_square(5)">
+			<img src="assets/flags/flags/usa-flag.svg"></article>
+
+	</section>
+
+
+	<section class="game">
+
+		<nav>
+			<div class="information">
+				<div id="action"> </div>
+			</div>
+			<div class="phone"> <img src="assets/PHONE.png"></div>
+
+			<bouton class="out" onclick="get_out()"> SE RETIRER</bouton>
+
+		</nav>
+
+		<section class="contener noselect">
+
+			<p id="dollars">
+				100000000 $
+			</p>
+
+			<article id="a0" onclick="click_square(0)">
+				<div id="b0"> </div>
+			</article>
+			<article id="a1" onclick="click_square(1)">
+				<div id="b1"> </div>
+			</article>
+			<article id="a2" onclick="click_square(2)">
+				<div id="b2"> </div>
+			</article>
+			<article id="a3" onclick="click_square(3)">
+				<div id="b3"> </div>
+			</article>
+			<article id="a4" onclick="click_square(4)">
+				<div id="b4"> </div>
+			</article>
+			<article id="a5" onclick="click_square(5)">
+				<div id="b5"> </div>
+			</article>
+			<article id="a6" onclick="click_square(6)">
+				<div id="b6"> </div>
+			</article>
+			<article id="a7" onclick="click_square(7)">
+				<div id="b7"> </div>
+			</article>
+			<article id="a8" onclick="click_square(8)">
+				<div id="b8"> </div>
+			</article>
+
+		</section>
+
+		<img class="fond" src="assets/PLANET_NETWORK.png">
+
+	</section>
+
+
+	<section class="screen_out">
+		<article>Somme récupérée : <p id="dollars2">
+				100000000 $
+			</p>
+			<button onclick="document.location.reload()">Restart</button>
+		</article>
+	</section>
+
+	<section class="bankerout">
+		<article>BANQUEROUTE</article>
+	</section>
+
+	<script>
+		var selected = false;
+		var bankout = false;
+
+		$(document).ready(function() {
+			$(".selected").click(function() {
+				if (selected == false) {
+					$(".caracter_selection").animate({
+						top: '-3000px',
+					});
+				}
+				selected = true;
+			});
+
+			$(".out").click(function() {
+				if (bankout == false) {
+					$(".screen_out").animate({
+						top: '0px',
+					});
+
+					$(".screen_out article").delay(100).animate({
+						top: '25vw',
+					});
+				}
+				bankout = true;
+			});
+		});
+	</script>
+
+	<script src="./trigger.js"></script>
+
+</body>
